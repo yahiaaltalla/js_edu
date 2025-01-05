@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Tutorial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #33333379;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .content div {
+      display: none;
+    }
+
+    .content div.active {
+      display: block;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    pre {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #home {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h3>Java Tutorial</h3>
+    <a href="#home" onclick="showSection('home')">Java HOME</a>
+    <a href="#intro" onclick="showSection('intro')">Java Intro</a>
+    <a href="#get-started" onclick="showSection('get-started')">Java Get Started</a>
+    <a href="#syntax" onclick="showSection('syntax')">Java Syntax</a>
+    <a href="#output" onclick="showSection('output')">Java Output</a>
+    <a href="#comments" onclick="showSection('comments')">Java Comments</a>
+    <a href="#variables" onclick="showSection('variables')">Java Variables</a>
+    <a href="#data-types" onclick="showSection('data-types')">Java Data Types</a>
+    <a href="#type-casting" onclick="showSection('type-casting')">Java Type Casting</a>
+    <a href="#operators" onclick="showSection('operators')">Java Operators</a>
+    <a href="#strings" onclick="showSection('strings')">Java Strings</a>
+    <a href="#math" onclick="showSection('math')">Java Math</a>
+    <a href="#booleans" onclick="showSection('booleans')">Java Booleans</a>
+    <a href="#ifelse" onclick="showSection('ifelse')">Java If...Else</a>
+    <a href="#switch" onclick="showSection('switch')">Java Switch</a>
+    <a href="#while-loop" onclick="showSection('while-loop')">Java While Loop</a>
+    <a href="#for-loop" onclick="showSection('for-loop')">Java For Loop</a>
+    <a href="#break-continue" onclick="showSection('break-continue')">Java Break/Continue</a>
+    <a href="#arrays" onclick="showSection('arrays')">Java Arrays</a>
+    <a href="#methods" onclick="showSection('methods')">Java Methods</a>
+    <a href="#method-parameters" onclick="showSection('method-parameters')">Java Method Parameters</a>
+    <a href="#method-overloading" onclick="showSection('method-overloading')">Java Method Overloading</a>
+    <a href="#scope" onclick="showSection('scope')">Java Scope</a>
+    <a href="#recursion" onclick="showSection('recursion')">Java Recursion</a>
+    <a href="#classes" onclick="showSection('classes')">Java Classes</a>
+    <a href="#oop" onclick="showSection('oop')">Java OOP</a>
+    <a href="#classes-objects" onclick="showSection('classes-objects')">Java Classes/Objects</a>
+    <a href="#class-attributes" onclick="showSection('class-attributes')">Java Class Attributes</a>
+    <a href="#class-methods" onclick="showSection('class-methods')">Java Class Methods</a>
+    <a href="#constructors" onclick="showSection('constructors')">Java Constructors</a>
+    <a href="#modifiers" onclick="showSection('modifiers')">Java Modifiers</a>
+    <a href="#encapsulation" onclick="showSection('encapsulation')">Java Encapsulation</a>
+    <a href="#packages-api" onclick="showSection('packages-api')">Java Packages / API</a>
+    <a href="#inheritance" onclick="showSection('inheritance')">Java Inheritance</a>
+    <a href="#polymorphism" onclick="showSection('polymorphism')">Java Polymorphism</a>
+    <a href="#inner-classes" onclick="showSection('inner-classes')">Java Inner Classes</a>
+    <a href="#abstraction" onclick="showSection('abstraction')">Java Abstraction</a>
+    <a href="#interface" onclick="showSection('interface')">Java Interface</a>
+    <a href="#enums" onclick="showSection('enums')">Java Enums</a>
+    <a href="#user-input" onclick="showSection('user-input')">Java User Input</a>
+    <a href="#date" onclick="showSection('date')">Java Date</a>
+    <a href="#arraylist" onclick="showSection('arraylist')">Java ArrayList</a>
+    <a href="#linkedlist" onclick="showSection('linkedlist')">Java LinkedList</a>
+    <a href="#list-sorting" onclick="showSection('list-sorting')">Java List Sorting</a>
+    <a href="#hashmap" onclick="showSection('hashmap')">Java HashMap</a>
+    <a href="#hashset" onclick="showSection('hashset')">Java HashSet</a>
+    <a href="#iterator" onclick="showSection('iterator')">Java Iterator</a>
+    <a href="#wrapper-classes" onclick="showSection('wrapper-classes')">Java Wrapper Classes</a>
+    <a href="#exceptions" onclick="showSection('exceptions')">Java Exceptions</a>
+    <a href="#regex" onclick="showSection('regex')">Java RegEx</a>
+    <a href="#threads" onclick="showSection('threads')">Java Threads</a>
+    <a href="#lambda" onclick="showSection('lambda')">Java Lambda</a>
+    <a href="#advanced-sorting" onclick="showSection('advanced-sorting')">Java Advanced Sorting</a>
+
+  </div>
+
+  <div class="content">
+    <div id="home">
+      <h2>Java HOME</h2>
+      <p>Welcome to the Java tutorial! This guide will cover various topics related to Java programming.</p>
+    </div>
+
+    <div id="intro">
+      <h2>Java Intro</h2>
+      <p>Java is a high-level, class-based, object-oriented programming language. It is designed to have as few
+        implementation dependencies as possible.</p>
+    </div>
+
+    <div id="get-started">
+      <h2>Java Get Started</h2>
+      <p>To get started with Java, you'll need to install the Java Development Kit (JDK). After installation, you can
+        write and run Java programs using a text editor and command line tools.</p>
+      <pre>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+      </pre>
+    </div>
+
+    <div id="syntax">
+      <h2>Java Syntax</h2>
+      <p>Java syntax is the set of rules that defines the combinations of symbols that are considered to be correctly
+        structured Java programs. Example:</p>
+      <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+      </pre>
+    </div>
+
+    <div id="output">
+      <h2>Java Output</h2>
+      <p>Java programs output information using the `System.out.println()` method. Example:</p>
+      <pre>
+System.out.println("This is a Java program output");
+      </pre>
+    </div>
+
+    <div id="comments">
+      <h2>Java Comments</h2>
+      <p>In Java, comments are used to explain code. Comments are ignored by the compiler. Example:</p>
+      <pre>
+// This is a single-line comment
+
+/*
+This is a multi-line comment
+*/
+      </pre>
+    </div>
+
+    <div id="variables">
+      <h2>Java Variables</h2>
+      <p>Variables are containers for storing data values. Example:</p>
+      <pre>
+int x = 10;
+String name = "Alice";
+      </pre>
+    </div>
+
+    <div id="data-types">
+      <h2>Java Data Types</h2>
+      <p>Java has many data types, including int, double, boolean, etc. Example:</p>
+      <pre>
+int age = 25;
+boolean isStudent = true;
+double price = 19.99;
+      </pre>
+    </div>
+
+    <div id="type-casting">
+      <h2>Java Type Casting</h2>
+      <p>Type casting is converting one type to another. Example:</p>
+      <pre>
+int x = 10;
+double y = (double) x;  // Casting int to double
+      </pre>
+    </div>
+
+    <div id="operators">
+      <h2>Java Operators</h2>
+      <p>Java has various operators like arithmetic, relational, and logical operators. Example:</p>
+      <pre>
+int a = 5, b = 10;
+int sum = a + b;  // Arithmetic operator
+boolean result = a < b;  // Relational operator
+      </pre>
+    </div>
+
+    <div id="strings">
+      <h2>Java Strings</h2>
+      <p>Strings are objects that represent sequences of characters. Example:</p>
+      <pre>
+String greeting = "Hello, " + "Java!";
+      </pre>
+    </div>
+
+    <div id="math">
+      <h2>Java Math</h2>
+      <p>The Math class in Java provides mathematical operations. Example:</p>
+      <pre>
+double pi = Math.PI;
+int max = Math.max(10, 20);
+      </pre>
+    </div>
+
+    <div id="booleans">
+      <h2>Java Booleans</h2>
+      <p>Booleans represent true/false values. Example:</p>
+      <pre>
+boolean isAdult = true;
+boolean hasPermission = false;
+      </pre>
+    </div>
+
+    <div id="ifelse">
+      <h2>Java If...Else</h2>
+      <p>The `if...else` statement is used for decision-making. Example:</p>
+      <pre>
+if (age >= 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Minor");
+}
+      </pre>
+    </div>
+
+    <div id="switch">
+      <h2>Java Switch</h2>
+      <p>The `switch` statement is used to select one of many code blocks to be executed. Example:</p>
+      <pre>
+int day = 3;
+switch (day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    case 3: System.out.println("Wednesday"); break;
+    default: System.out.println("Invalid day");
+}
+      </pre>
+    </div>
+
+    <div id="while-loop">
+      <h2>Java While Loop</h2>
+      <p>The `while` loop repeats a statement or block of statements as long as a given condition is true. Example:</p>
+      <pre>
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+      </pre>
+    </div>
+
+    <div id="for-loop">
+      <h2>Java For Loop</h2>
+      <p>The `for` loop is used to iterate over a range or array. Example:</p>
+      <pre>
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+      </pre>
+    </div>
+
+    <div id="break-continue">
+      <h2>Java Break/Continue</h2>
+      <p>The `break` statement exits the loop, while `continue` skips the current iteration. Example:</p>
+      <pre>
+for (int i = 0; i < 5; i++) {
+    if (i == 3) break;
+    System.out.println(i);
+}
+      </pre>
+    </div>
+
+    <div id="arrays">
+      <h2>Java Arrays</h2>
+      <p>Arrays are used to store multiple values in a single variable. Example:</p>
+      <pre>
+int[] numbers = {1, 2, 3, 4, 5};
+System.out.println(numbers[0]);  // Output: 1
+      </pre>
+    </div>
+
+    <div id="methods">
+      <h2>Java Methods</h2>
+      <p>Methods are blocks of code that perform a specific task. Example:</p>
+      <pre>
+public static void greet() {
+    System.out.println("Hello!");
+}
+greet();  // Calling the method
+      </pre>
+    </div>
+
+    <div id="method-parameters">
+      <h2>Java Method Parameters</h2>
+      <p>Methods can accept parameters. Example:</p>
+      <pre>
+public static void greet(String name) {
+    System.out.println("Hello, " + name);
+}
+greet("Alice");  // Calling the method with a parameter
+      </pre>
+    </div>
+
+    <div id="method-overloading">
+      <h2>Java Method Overloading</h2>
+      <p>Method overloading allows methods to have the same name but different parameters. Example:</p>
+      <pre>
+public static void greet() {
+    System.out.println("Hello!");
+}
+public static void greet(String name) {
+    System.out.println("Hello, " + name);
+}
+greet();  // Calling the overloaded method
+greet("Alice");
+      </pre>
+    </div>
+
+    <div id="scope">
+      <h2>Java Scope</h2>
+      <p>Scope refers to the visibility of variables. Example:</p>
+      <pre>
+int x = 10;  // Global scope
+public static void test() {
+    int y = 20;  // Local scope
+}
+      </pre>
+    </div>
+
+    <div id="recursion">
+      <h2>Java Recursion</h2>
+      <p>Recursion is when a method calls itself. Example:</p>
+      <pre>
+public static int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+System.out.println(factorial(5));  // Output: 120
+      </pre>
+    </div>
+    <div id="classes">
+      <h2>Java Classes</h2>
+      <p>In Java, a class is a blueprint for creating objects. Example:</p>
+      <pre>
+class Car {
+    String model;
+    String brand;
+}
+      </pre>
+    </div>
+
+    <div id="oop">
+      <h2>Java OOP</h2>
+      <p>Java follows Object-Oriented Programming (OOP) principles like inheritance, polymorphism, encapsulation, and
+        abstraction.</p>
+    </div>
+
+    <div id="classes-objects">
+      <h2>Java Classes/Objects</h2>
+      <p>Classes define the properties and behaviors of objects. Example:</p>
+      <pre>
+class Car {
+    String model;
+    String brand;
+
+    void start() {
+        System.out.println("Car is starting");
+    }
+}
+
+Car myCar = new Car();
+myCar.start();
+      </pre>
+    </div>
+
+    <div id="class-attributes">
+      <h2>Java Class Attributes</h2>
+      <p>Class attributes (fields) define the properties of objects. Example:</p>
+      <pre>
+class Car {
+    String model;
+    String brand;
+    int year;
+}
+      </pre>
+    </div>
+
+    <div id="class-methods">
+      <h2>Java Class Methods</h2>
+      <p>Methods define the behaviors of a class. Example:</p>
+      <pre>
+class Car {
+    String model;
+    String brand;
+
+    void drive() {
+        System.out.println("Driving the " + model);
+    }
+}
+      </pre>
+    </div>
+
+    <div id="constructors">
+      <h2>Java Constructors</h2>
+      <p>Constructors initialize objects. Example:</p>
+      <pre>
+class Car {
+    String model;
+
+    Car(String model) {
+        this.model = model;
+    }
+}
+
+Car myCar = new Car("Toyota");
+      </pre>
+    </div>
+
+    <div id="modifiers">
+      <h2>Java Modifiers</h2>
+      <p>Java has various access modifiers like public, private, and protected. Example:</p>
+      <pre>
+public class Car {
+    private String model;
+}
+      </pre>
+    </div>
+
+    <div id="encapsulation">
+      <h2>Java Encapsulation</h2>
+      <p>Encapsulation is the concept of wrapping data and methods into a single unit. Example:</p>
+      <pre>
+class Car {
+    private String model;
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+}
+      </pre>
+    </div>
+
+    <div id="packages-api">
+      <h2>Java Packages / API</h2>
+      <p>Java packages are used to group related classes and interfaces. Example:</p>
+      <pre>
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    }
+}
+      </pre>
+    </div>
+
+    <div id="inheritance">
+      <h2>Java Inheritance</h2>
+      <p>Inheritance allows a class to inherit attributes and methods from another class. Example:</p>
+      <pre>
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+Dog dog = new Dog();
+dog.makeSound();  // Outputs: Bark
+      </pre>
+    </div>
+
+    <div id="polymorphism">
+      <h2>Java Polymorphism</h2>
+      <p>Polymorphism allows methods to be used interchangeably. Example:</p>
+      <pre>
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+Animal myAnimal = new Dog();
+myAnimal.makeSound();  // Outputs: Bark
+      </pre>
+    </div>
+
+    <div id="inner-classes">
+      <h2>Java Inner Classes</h2>
+      <p>Inner classes are classes defined within another class. Example:</p>
+      <pre>
+class Outer {
+    class Inner {
+        void display() {
+            System.out.println("Inner class");
+        }
+    }
+}
+
+Outer outer = new Outer();
+Outer.Inner inner = outer.new Inner();
+inner.display();
+      </pre>
+    </div>
+
+    <div id="abstraction">
+      <h2>Java Abstraction</h2>
+      <p>Abstraction hides implementation details and shows only functionality. Example:</p>
+      <pre>
+abstract class Animal {
+    abstract void sound();
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+      </pre>
+    </div>
+
+    <div id="interface">
+      <h2>Java Interface</h2>
+      <p>Interfaces are used to define a contract that implementing classes must follow. Example:</p>
+      <pre>
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+      </pre>
+    </div>
+
+    <div id="enums">
+      <h2>Java Enums</h2>
+      <p>Enums define a set of constants. Example:</p>
+      <pre>
+enum Day { MONDAY, TUESDAY, WEDNESDAY }
+
+Day today = Day.MONDAY;
+System.out.println(today);  // Outputs: MONDAY
+      </pre>
+    </div>
+
+    <div id="user-input">
+      <h2>Java User Input</h2>
+      <p>Reading user input can be done using the Scanner class. Example:</p>
+      <pre>
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter your name: ");
+String name = sc.nextLine();
+System.out.println("Hello " + name);
+      </pre>
+    </div>
+
+    <div id="date">
+      <h2>Java Date</h2>
+      <p>Java provides the Date class for handling dates. Example:</p>
+      <pre>
+import java.util.Date;
+
+Date date = new Date();
+System.out.println(date);
+      </pre>
+    </div>
+
+    <div id="arraylist">
+      <h2>Java ArrayList</h2>
+      <p>ArrayList is a resizable array. Example:</p>
+      <pre>
+import java.util.ArrayList;
+
+ArrayList<String> list = new ArrayList<>();
+list.add("Apple");
+list.add("Banana");
+      </pre>
+    </div>
+
+    <div id="linkedlist">
+      <h2>Java LinkedList</h2>
+      <p>LinkedList is a doubly linked list implementation. Example:</p>
+      <pre>
+import java.util.LinkedList;
+
+LinkedList<String> list = new LinkedList<>();
+list.add("Apple");
+list.add("Banana");
+      </pre>
+    </div>
+
+    <div id="list-sorting">
+      <h2>Java List Sorting</h2>
+      <p>Sorting lists in Java can be done using `Collections.sort`. Example:</p>
+      <pre>
+import java.util.ArrayList;
+import java.util.Collections;
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(5);
+list.add(2);
+list.add(8);
+Collections.sort(list);
+System.out.println(list);
+      </pre>
+    </div>
+
+    <div id="hashmap">
+      <h2>Java HashMap</h2>
+      <p>HashMap stores key-value pairs. Example:</p>
+      <pre>
+import java.util.HashMap;
+
+HashMap<String, String> map = new HashMap<>();
+map.put("A", "Apple");
+map.put("B", "Banana");
+      </pre>
+    </div>
+
+    <div id="hashset">
+      <h2>Java HashSet</h2>
+      <p>HashSet stores unique elements. Example:</p>
+      <pre>
+import java.util.HashSet;
+
+HashSet<String> set = new HashSet<>();
+set.add("Apple");
+set.add("Banana");
+      </pre>
+    </div>
+
+    <div id="iterator">
+      <h2>Java Iterator</h2>
+      <p>Iterator allows traversing collections. Example:</p>
+      <pre>
+import java.util.ArrayList;
+import java.util.Iterator;
+
+ArrayList<String> list = new ArrayList<>();
+list.add("Apple");
+list.add("Banana");
+
+Iterator<String> iterator = list.iterator();
+while (iterator.hasNext()) {
+    System.out.println(iterator.next());
+}
+      </pre>
+    </div>
+
+    <div id="wrapper-classes">
+      <h2>Java Wrapper Classes</h2>
+      <p>Wrapper classes allow primitive data types to be used as objects. Example:</p>
+      <pre>
+int x = 10;
+Integer obj = Integer.valueOf(x);
+      </pre>
+    </div>
+
+    <div id="exceptions">
+      <h2>Java Exceptions</h2>
+      <p>Handling exceptions with try-catch blocks. Example:</p>
+      <pre>
+try {
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Error: " + e.getMessage());
+}
+      </pre>
+    </div>
+    <div id="regex">
+      <h2>Java RegEx</h2>
+      <p>Regular expressions are used for pattern matching in strings. Example:</p>
+      <pre>
+import java.util.regex.*;
+
+String text = "Hello 123 World";
+Pattern p = Pattern.compile("\\d+");
+Matcher m = p.matcher(text);
+while (m.find()) {
+    System.out.println("Found number: " + m.group());
+}
+      </pre>
+    </div>
+
+    <div id="threads">
+      <h2>Java Threads</h2>
+      <p>Java supports multithreading to run multiple tasks concurrently. Example:</p>
+      <pre>
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+
+MyThread t1 = new MyThread();
+t1.start();
+      </pre>
+    </div>
+
+    <div id="lambda">
+      <h2>Java Lambda</h2>
+      <p>Lambda expressions allow you to write concise code for functional interfaces. Example:</p>
+      <pre>
+interface Greeting {
+    void greet(String name);
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Greeting greeting = (name) -> System.out.println("Hello " + name);
+        greeting.greet("John");
+    }
+}
+      </pre>
+    </div>
+
+    <div id="advanced-sorting">
+      <h2>Java Advanced Sorting</h2>
+      <p>Java provides powerful sorting mechanisms using `Comparator` for custom sorting. Example:</p>
+      <pre>
+import java.util.*;
+
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+class PersonComparator implements Comparator<Person> {
+    public int compare(Person p1, Person p2) {
+        return Integer.compare(p1.getAge(), p2.getAge());
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Alice", 30));
+        people.add(new Person("Bob", 25));
+
+        Collections.sort(people, new PersonComparator());
+
+        for (Person person : people) {
+            System.out.println(person.getName() + " - " + person.getAge());
+        }
+    }
+}
+      </pre>
+    </div>
+
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content div');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+
+</html>

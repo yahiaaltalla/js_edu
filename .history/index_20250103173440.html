@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Programming Languages Carousel</title>
+  </head>
+
+  <body style="background-color: navy">
+    <div class="carousel-container">
+      <header>
+        <h1
+          style="
+            color: navy;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+          "
+        >
+          Which Language do you want to learn today?
+        </h1>
+      </header>
+
+      <div class="carousel">
+        <div class="carousel-item">
+          <a href="python.html"><img src="python.png" alt="Python" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="java.html"><img src="java.png" alt="Java" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="c++.html"><img src="c++.png" alt="c++" /></a>
+        </div>
+        <div class="carousel-item">
+          <a href="php.html"><img src="php.png" alt="PHP" /></a>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button id="prevBtn">Prev</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

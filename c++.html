@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Tutorial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #33333379;
+      padding-top: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .content div {
+      display: none;
+    }
+
+    .content div.active {
+      display: block;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    pre {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #home {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h3>C++ Tutorial</h3>
+    <a href="#home" onclick="showSection('home')">C++ HOME</a>
+    <a href="#intro" onclick="showSection('intro')">C++ Intro</a>
+    <a href="#get-started" onclick="showSection('get-started')">C++ Get Started</a>
+    <a href="#syntax" onclick="showSection('syntax')">C++ Syntax</a>
+    <a href="#output" onclick="showSection('output')">C++ Output</a>
+    <a href="#comments" onclick="showSection('comments')">C++ Comments</a>
+    <a href="#variables" onclick="showSection('variables')">C++ Variables</a>
+    <a href="#user-input" onclick="showSection('user-input')">C++ User Input</a>
+    <a href="#data-types" onclick="showSection('data-types')">C++ Data Types</a>
+    <a href="#operators" onclick="showSection('operators')">C++ Operators</a>
+    <a href="#strings" onclick="showSection('strings')">C++ Strings</a>
+    <a href="#math" onclick="showSection('math')">C++ Math</a>
+    <a href="#booleans" onclick="showSection('booleans')">C++ Booleans</a>
+    <a href="#if-else" onclick="showSection('if-else')">C++ If...Else</a>
+    <a href="#switch" onclick="showSection('switch')">C++ Switch</a>
+    <a href="#while-loop" onclick="showSection('while-loop')">C++ While Loop</a>
+    <a href="#for-loop" onclick="showSection('for-loop')">C++ For Loop</a>
+    <a href="#break-continue" onclick="showSection('break-continue')">C++ Break/Continue</a>
+    <a href="#arrays" onclick="showSection('arrays')">C++ Arrays</a>
+    <a href="#structures" onclick="showSection('structures')">C++ Structures</a>
+    <a href="#enums" onclick="showSection('enums')">C++ Enums</a>
+    <a href="#references" onclick="showSection('references')">C++ References</a>
+    <a href="#pointers" onclick="showSection('pointers')">C++ Pointers</a>
+    <a href="#functions" onclick="showSection('functions')">C++ Functions</a>
+    <a href="#function-parameters" onclick="showSection('function-parameters')">C++ Function Parameters</a>
+    <a href="#function-overloading" onclick="showSection('function-overloading')">C++ Function Overloading</a>
+    <a href="#scope" onclick="showSection('scope')">C++ Scope</a>
+    <a href="#recursion" onclick="showSection('recursion')">C++ Recursion</a>
+    <a href="#oop" onclick="showSection('oop')">C++ OOP</a>
+    <a href="#classes-objects" onclick="showSection('classes-objects')">C++ Classes/Objects</a>
+    <a href="#class-methods" onclick="showSection('class-methods')">C++ Class Methods</a>
+    <a href="#constructors" onclick="showSection('constructors')">C++ Constructors</a>
+    <a href="#access-specifiers" onclick="showSection('access-specifiers')">C++ Access Specifiers</a>
+    <a href="#encapsulation" onclick="showSection('encapsulation')">C++ Encapsulation</a>
+    <a href="#inheritance" onclick="showSection('inheritance')">C++ Inheritance</a>
+    <a href="#polymorphism" onclick="showSection('polymorphism')">C++ Polymorphism</a>
+    <a href="#files" onclick="showSection('files')">C++ Files</a>
+    <a href="#exceptions" onclick="showSection('exceptions')">C++ Exceptions</a>
+    <a href="#date" onclick="showSection('date')">C++ Date</a>
+  </div>
+
+  <div class="content">
+    <div id="home">
+      <h2>C++ HOME</h2>
+      <p>Welcome to the C++ tutorial. C++ is a powerful programming language used for various applications.</p>
+    </div>
+
+    <div id="intro">
+      <h2>C++ Intro</h2>
+      <p>Introduction to C++, its history, and its applications.</p>
+    </div>
+
+    <div id="get-started">
+      <h2>C++ Get Started</h2>
+      <p>How to set up your environment and write your first C++ program.</p>
+    </div>
+
+    <div id="syntax">
+      <h2>C++ Syntax</h2>
+      <p>The basic syntax of C++ programming.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            cout << "Hello, World!";
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="output">
+      <h2>C++ Output</h2>
+      <p>Learn how to display output using C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            cout << "This is a C++ tutorial." << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="comments">
+      <h2>C++ Comments</h2>
+      <p>Using comments to document your C++ code.</p>
+      <pre>
+        // This is a single-line comment
+
+        /* This is a
+           multi-line comment */
+      </pre>
+    </div>
+
+    <div id="variables">
+      <h2>C++ Variables</h2>
+      <p>Learn about variables and how to use them in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int x = 5;
+            cout << "The value of x is: " << x << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="user-input">
+      <h2>C++ User Input</h2>
+      <p>How to take input from the user in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int age;
+            cout << "Enter your age: ";
+            cin >> age;
+            cout << "You are " << age << " years old." << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="data-types">
+      <h2>C++ Data Types</h2>
+      <p>Understanding data types in C++.</p>
+      <pre>
+        int age = 25;
+        double price = 19.99;
+        char grade = 'A';
+      </pre>
+    </div>
+
+    <div id="operators">
+      <h2>C++ Operators</h2>
+      <p>An overview of operators in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int x = 10, y = 5;
+            cout << "Sum: " << x + y << endl;
+            cout << "Product: " << x * y << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="strings">
+      <h2>C++ Strings</h2>
+      <p>Working with strings in C++.</p>
+      <pre>
+        #include <iostream>
+        #include <string>
+        using namespace std;
+
+        int main() {
+            string name = "John";
+            cout << "Hello, " << name << "!" << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="math">
+      <h2>C++ Math</h2>
+      <p>Performing mathematical operations in C++.</p>
+      <pre>
+        #include <iostream>
+        #include <cmath>
+        using namespace std;
+
+        int main() {
+            double result = sqrt(25);  // Square root of 25
+            cout << "Square root of 25 is: " << result << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="booleans">
+      <h2>C++ Booleans</h2>
+      <p>Understanding boolean values and expressions in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            bool isAdult = true;
+            cout << "Is adult: " << isAdult << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="if-else">
+      <h2>C++ If...Else</h2>
+      <p>Conditional statements in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int age = 20;
+            if (age >= 18) {
+                cout << "You are an adult." << endl;
+            } else {
+                cout << "You are a minor." << endl;
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="switch">
+      <h2>C++ Switch</h2>
+      <p>Switch case statements in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int day = 3;
+            switch (day) {
+                case 1: cout << "Monday"; break;
+                case 2: cout << "Tuesday"; break;
+                case 3: cout << "Wednesday"; break;
+                default: cout << "Invalid day"; break;
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="while-loop">
+      <h2>C++ While Loop</h2>
+      <p>While loop structure in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int i = 0;
+            while (i < 5) {
+                cout << i << endl;
+                i++;
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="for-loop">
+      <h2>C++ For Loop</h2>
+      <p>For loop structure in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            for (int i = 0; i < 5; i++) {
+                cout << i << endl;
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="break-continue">
+      <h2>C++ Break/Continue</h2>
+      <p>Using break and continue statements in loops.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            for (int i = 0; i < 10; i++) {
+                if (i == 5) break;
+                if (i == 3) continue;
+                cout << i << endl;
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="arrays">
+      <h2>C++ Arrays</h2>
+      <p>Arrays in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int arr[5] = {1, 2, 3, 4, 5};
+            for (int i = 0; i < 5; i++) {
+                cout << arr[i] << " ";
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="structures">
+      <h2>C++ Structures</h2>
+      <p>Structures in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        struct Person {
+            string name;
+            int age;
+        };
+
+        int main() {
+            Person p1 = {"John", 25};
+            cout << p1.name << " is " << p1.age << " years old." << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="enums">
+      <h2>C++ Enums</h2>
+      <p>Enums in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        enum Day { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+
+        int main() {
+            Day today = Wednesday;
+            cout << "Today is day " << today << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="references">
+      <h2>C++ References</h2>
+      <p>References in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int x = 10;
+            int &ref = x;
+            cout << ref << endl;  // Outputs 10
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="pointers">
+      <h2>C++ Pointers</h2>
+      <p>Pointers in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            int x = 10;
+            int *ptr = &x;
+            cout << *ptr << endl;  // Outputs 10
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="functions">
+      <h2>C++ Functions</h2>
+      <p>Functions in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        void greet() {
+            cout << "Hello, C++!" << endl;
+        }
+
+        int main() {
+            greet();  // Call function
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="function-parameters">
+      <h2>C++ Function Parameters</h2>
+      <p>Functions with parameters in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        void greet(string name) {
+            cout << "Hello, " << name << "!" << endl;
+        }
+
+        int main() {
+            greet("John");  // Call function with parameter
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="function-overloading">
+      <h2>C++ Function Overloading</h2>
+      <p>Function overloading in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        void greet() {
+            cout << "Hello!" << endl;
+        }
+
+        void greet(string name) {
+            cout << "Hello, " << name << "!" << endl;
+        }
+
+        int main() {
+            greet();          // Call overloaded function
+            greet("John");    // Call overloaded function
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="scope">
+      <h2>C++ Scope</h2>
+      <p>Scope of variables in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int x = 5;  // Global variable
+
+        int main() {
+            int x = 10;  // Local variable
+            cout << x << endl;  // Outputs 10
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="recursion">
+      <h2>C++ Recursion</h2>
+      <p>Recursion in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int factorial(int n) {
+            if (n == 0) return 1;
+            return n * factorial(n - 1);
+        }
+
+        int main() {
+            cout << "Factorial of 5: " << factorial(5) << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="oop">
+      <h2>C++ OOP</h2>
+      <p>Object-Oriented Programming in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Car {
+        public:
+            string brand;
+            string model;
+            int year;
+
+            void display() {
+                cout << year << " " << brand << " " << model << endl;
+            }
+        };
+
+        int main() {
+            Car car1;
+            car1.brand = "Toyota";
+            car1.model = "Corolla";
+            car1.year = 2020;
+            car1.display();
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="classes-objects">
+      <h2>C++ Classes/Objects</h2>
+      <p>Classes and objects in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Person {
+        public:
+            string name;
+            int age;
+
+            void introduce() {
+                cout << "Hi, I am " << name << " and I am " << age << " years old." << endl;
+            }
+        };
+
+        int main() {
+            Person p;
+            p.name = "John";
+            p.age = 25;
+            p.introduce();
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="class-methods">
+      <h2>C++ Class Methods</h2>
+      <p>Methods in C++ classes.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Rectangle {
+        public:
+            double length, width;
+
+            double area() {
+                return length * width;
+            }
+        };
+
+        int main() {
+            Rectangle rect;
+            rect.length = 5;
+            rect.width = 3;
+            cout << "Area of rectangle: " << rect.area() << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="constructors">
+      <h2>C++ Constructors</h2>
+      <p>Constructors in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Person {
+        public:
+            string name;
+            int age;
+
+            Person(string n, int a) {  // Constructor
+                name = n;
+                age = a;
+            }
+
+            void introduce() {
+                cout << "Hi, I am " << name << " and I am " << age << " years old." << endl;
+            }
+        };
+
+        int main() {
+            Person p1("John", 25);  // Creating an object
+            p1.introduce();
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="access-specifiers">
+      <h2>C++ Access Specifiers</h2>
+      <p>Access specifiers in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Person {
+        public:
+            string name;
+        private:
+            int age;
+        public:
+            void setAge(int a) {
+                age = a;
+            }
+            void introduce() {
+                cout << "Hi, I am " << name << " and I am " << age << " years old." << endl;
+            }
+        };
+
+        int main() {
+            Person p1;
+            p1.name = "John";
+            p1.setAge(25);
+            p1.introduce();
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="encapsulation">
+      <h2>C++ Encapsulation</h2>
+      <p>Encapsulation in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Person {
+        private:
+            string name;
+            int age;
+        public:
+            void setName(string n) { name = n; }
+            void setAge(int a) { age = a; }
+            void introduce() {
+                cout << "Hi, I am " << name << " and I am " << age << " years old." << endl;
+            }
+        };
+
+        int main() {
+            Person p1;
+            p1.setName("John");
+            p1.setAge(25);
+            p1.introduce();
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="inheritance">
+      <h2>C++ Inheritance</h2>
+      <p>Inheritance in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Animal {
+        public:
+            void sound() {
+                cout << "Animal makes a sound." << endl;
+            }
+        };
+
+        class Dog : public Animal {
+        public:
+            void sound() {
+                cout << "Dog barks." << endl;
+            }
+        };
+
+        int main() {
+            Dog d;
+            d.sound();  // Calls Dog's sound() method
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="polymorphism">
+      <h2>C++ Polymorphism</h2>
+      <p>Polymorphism in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        class Animal {
+        public:
+            virtual void sound() {
+                cout << "Animal makes a sound." << endl;
+            }
+        };
+
+        class Dog : public Animal {
+        public:
+            void sound() {
+                cout << "Dog barks." << endl;
+            }
+        };
+
+        int main() {
+            Animal* a;
+            Dog d;
+            a = &d;
+            a->sound();  // Calls Dog's sound() method
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="files">
+      <h2>C++ Files</h2>
+      <p>File handling in C++.</p>
+      <pre>
+        #include <iostream>
+        #include <fstream>
+        using namespace std;
+
+        int main() {
+            ofstream file("example.txt");
+            file << "Hello, file!" << endl;
+            file.close();
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="exceptions">
+      <h2>C++ Exceptions</h2>
+      <p>Exception handling in C++.</p>
+      <pre>
+        #include <iostream>
+        using namespace std;
+
+        int main() {
+            try {
+                int x = 10;
+                if (x == 10) throw "Error: x is 10";
+            }
+            catch (const char* msg) {
+                cout << msg << endl;
+            }
+            return 0;
+        }
+      </pre>
+    </div>
+
+    <div id="date">
+      <h2>C++ Date</h2>
+      <p>Working with dates in C++.</p>
+      <pre>
+        #include <iostream>
+        #include <ctime>
+        using namespace std;
+
+        int main() {
+            time_t now = time(0);
+            char* dt = ctime(&now);
+            cout << "Current date and time: " << dt << endl;
+            return 0;
+        }
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      let sections = document.querySelectorAll('.content div');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      let activeSection = document.getElementById(id);
+      activeSection.classList.add('active');
+    }
+
+    showSection('home');
+  </script>
+</body>
+</html>

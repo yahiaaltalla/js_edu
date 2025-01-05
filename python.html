@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Tutorial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .sidebar {
+      height: 100vh;
+      /* Full height of the viewport */
+      width: 250px;
+      /* Sidebar width */
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #33333379;
+      padding-top: 20px;
+      overflow-y: auto;
+      /* Allow vertical scrolling if content overflows */
+    }
+
+    .sidebar a {
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .content div {
+      display: none;
+    }
+
+    .content div.active {
+      display: block;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    pre {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #intro {
+      display: block;
+      /* Default section */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h3>Python Tutorial</h3>
+    <a href="#intro" onclick="showSection('intro')">Python Intro</a>
+    <a href="#syntax" onclick="showSection('syntax')">Python Syntax</a>
+    <a href="#variables" onclick="showSection('variables')">Python Variables</a>
+    <a href="#data-types" onclick="showSection('data-types')">Python Data Types</a>
+    <a href="#numbers" onclick="showSection('numbers')">Python Numbers</a>
+    <a href="#casting" onclick="showSection('casting')">Python Casting</a>
+    <a href="#strings" onclick="showSection('strings')">Python Strings</a>
+    <a href="#booleans" onclick="showSection('booleans')">Python Booleans</a>
+    <a href="#operators" onclick="showSection('operators')">Python Operators</a>
+    <a href="#lists" onclick="showSection('lists')">Python Lists</a>
+    <a href="#tuples" onclick="showSection('tuples')">Python Tuples</a>
+    <a href="#sets" onclick="showSection('sets')">Python Sets</a>
+    <a href="#dictionaries" onclick="showSection('dictionaries')">Python Dictionaries</a>
+    <a href="#ifelse" onclick="showSection('ifelse')">Python If...Else</a>
+    <a href="#while-loops" onclick="showSection('while-loops')">Python While Loops</a>
+    <a href="#for-loops" onclick="showSection('for-loops')">Python For Loops</a>
+    <a href="#functions" onclick="showSection('functions')">Python Functions</a>
+    <a href="#lambda" onclick="showSection('lambda')">Python Lambda</a>
+    <a href="#arrays" onclick="showSection('arrays')">Python Arrays</a>
+    <a href="#classes" onclick="showSection('classes')">Python Classes</a>
+    <a href="#inheritance" onclick="showSection('inheritance')">Python Inheritance</a>
+    <a href="#iterators" onclick="showSection('iterators')">Python Iterators</a>
+    <a href="#polymorphism" onclick="showSection('polymorphism')">Python Polymorphism</a>
+    <a href="#scope" onclick="showSection('scope')">Python Scope</a>
+    <a href="#modules" onclick="showSection('modules')">Python Modules</a>
+    <a href="#dates" onclick="showSection('dates')">Python Dates</a>
+    <a href="#math" onclick="showSection('math')">Python Math</a>
+    <a href="#json" onclick="showSection('json')">Python JSON</a>
+    <a href="#regex" onclick="showSection('regex')">Python RegEx</a>
+    <a href="#tryexcept" onclick="showSection('tryexcept')">Python Try...Except</a>
+    <a href="#user-input" onclick="showSection('user-input')">Python User Input</a>
+    <a href="#string-formatting" onclick="showSection('string-formatting')">Python String Formatting</a>
+  </div>
+
+  <div class="content">
+    <div id="intro">
+      <h2>Python Intro</h2>
+      <p>Python is a high-level, interpreted programming language used for web development, data science, artificial
+        intelligence, and more. It is known for its readability and simplicity.</p>
+    </div>
+
+    <div id="syntax">
+      <h2>Python Syntax</h2>
+      <p>Python syntax is clean and easy to read. Example of a basic Python program:</p>
+      <pre>
+print("Hello, World!")
+      </pre>
+    </div>
+
+    <div id="variables">
+      <h2>Python Variables</h2>
+      <p>Variables are used to store data. Example:</p>
+      <pre>
+x = 10
+y = "Hello"
+      </pre>
+    </div>
+
+    <div id="data-types">
+      <h2>Python Data Types</h2>
+      <p>Python has various data types such as integers, floats, strings, and booleans. Example:</p>
+      <pre>
+age = 30        # Integer
+height = 5.7    # Float
+name = "Alice"  # String
+is_active = True  # Boolean
+      </pre>
+    </div>
+
+    <div id="numbers">
+      <h2>Python Numbers</h2>
+      <p>Python supports various numerical types such as int and float. Example:</p>
+      <pre>
+x = 10
+y = 15.5
+      </pre>
+    </div>
+
+    <div id="casting">
+      <h2>Python Casting</h2>
+      <p>Casting is used to convert one data type to another. Example:</p>
+      <pre>
+x = 10
+y = float(x)  # Convert to float
+      </pre>
+    </div>
+
+    <div id="strings">
+      <h2>Python Strings</h2>
+      <p>Strings are sequences of characters. Example:</p>
+      <pre>
+name = "Alice"
+greeting = "Hello, " + name
+      </pre>
+    </div>
+
+    <div id="booleans">
+      <h2>Python Booleans</h2>
+      <p>Booleans represent True or False values. Example:</p>
+      <pre>
+is_active = True
+is_done = False
+      </pre>
+    </div>
+
+    <div id="operators">
+      <h2>Python Operators</h2>
+      <p>Python supports various operators like arithmetic, comparison, and logical operators. Example:</p>
+      <pre>
+x = 5
+y = 10
+z = x + y  # Addition
+      </pre>
+    </div>
+
+    <div id="lists">
+      <h2>Python Lists</h2>
+      <p>Lists are mutable sequences of items. Example:</p>
+      <pre>
+fruits = ["apple", "banana", "cherry"]
+      </pre>
+    </div>
+
+    <div id="tuples">
+      <h2>Python Tuples</h2>
+      <p>Tuples are immutable sequences. Example:</p>
+      <pre>
+coordinates = (10, 20)
+      </pre>
+    </div>
+
+    <div id="sets">
+      <h2>Python Sets</h2>
+      <p>Sets are unordered collections of unique items. Example:</p>
+      <pre>
+fruits = {"apple", "banana", "cherry"}
+      </pre>
+    </div>
+
+    <div id="dictionaries">
+      <h2>Python Dictionaries</h2>
+      <p>Dictionaries store key-value pairs. Example:</p>
+      <pre>
+person = {"name": "Alice", "age": 30}
+      </pre>
+    </div>
+
+    <div id="ifelse">
+      <h2>Python If...Else</h2>
+      <p>The if-else statement allows decision-making. Example:</p>
+      <pre>
+age = 18
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+      </pre>
+    </div>
+
+    <div id="while-loops">
+      <h2>Python While Loops</h2>
+      <p>While loops repeat as long as a condition is true. Example:</p>
+      <pre>
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+      </pre>
+    </div>
+
+    <div id="for-loops">
+      <h2>Python For Loops</h2>
+      <p>For loops iterate over a sequence. Example:</p>
+      <pre>
+for x in range(5):
+    print(x)
+      </pre>
+    </div>
+
+    <div id="functions">
+      <h2>Python Functions</h2>
+      <p>Functions are blocks of code that are executed when called. Example:</p>
+      <pre>
+def greet(name):
+    print("Hello, " + name)
+greet("Alice")
+      </pre>
+    </div>
+
+    <div id="lambda">
+      <h2>Python Lambda</h2>
+      <p>Lambda functions are small anonymous functions. Example:</p>
+      <pre>
+multiply = lambda x, y: x * y
+print(multiply(2, 3))
+      </pre>
+    </div>
+
+    <div id="arrays">
+      <h2>Python Arrays</h2>
+      <p>Python arrays are used to store multiple items in a single variable. Example:</p>
+      <pre>
+import array
+arr = array.array('i', [1, 2, 3, 4])
+      </pre>
+    </div>
+
+    <div id="classes">
+      <h2>Python Classes</h2>
+      <p>Classes are blueprints for creating objects. Example:</p>
+      <pre>
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+car = Car("Toyota", "Camry")
+      </pre>
+    </div>
+
+    <div id="inheritance">
+      <h2>Python Inheritance</h2>
+      <p>Inheritance allows a class to inherit attributes and methods from another class. Example:</p>
+      <pre>
+class ElectricCar(Car):
+    def __init__(self, brand
+    self.brand = brand
+    self.model = model
+    self.battery_size = 75
+def describe(self):
+    print(f"{self.brand} {self.model} with a {self.battery_size}-kWh battery")
+electric_car = ElectricCar("Tesla", "Model S")
+electric_car.describe()
+  </pre>
+    </div>
+
+    <div id="iterators">
+      <h2>Python Iterators</h2>
+      <p>Iterators allow iterating over a sequence, like a list. Example:</p>
+      <pre>
+nums = [1, 2, 3]
+it = iter(nums)
+print(next(it))  # 1
+  </pre>
+    </div>
+
+    <div id="polymorphism">
+      <h2>Python Polymorphism</h2>
+      <p>Polymorphism allows different classes to have methods with the same name. Example:</p>
+      <pre>
+class Animal:
+def sound(self):
+    pass
+class Dog(Animal):
+def sound(self):
+    return "Woof"
+class Cat(Animal):
+def sound(self):
+    return "Meow"
+dog = Dog()
+cat = Cat()
+print(dog.sound())  # Woof
+print(cat.sound())  # Meow
+  </pre>
+    </div>
+
+    <div id="scope">
+      <h2>Python Scope</h2>
+      <p>Scope determines the visibility of variables. Example:</p>
+      <pre>
+x = 10  # Global scope
+def func():
+x = 20  # Local scope
+print(x)
+func()
+print(x)  # Global variable
+  </pre>
+    </div>
+
+    <div id="modules">
+      <h2>Python Modules</h2>
+      <p>Modules allow you to group functions, classes, and variables. Example:</p>
+      <pre>
+import math
+print(math.sqrt(16))  # 4.0
+  </pre>
+    </div>
+
+    <div id="dates">
+      <h2>Python Dates</h2>
+      <p>Python provides the datetime module to handle dates. Example:</p>
+      <pre>
+import datetime
+today = datetime.date.today()
+print(today)
+  </pre>
+    </div>
+
+    <div id="math">
+      <h2>Python Math</h2>
+      <p>Python has a math module that provides mathematical functions. Example:</p>
+      <pre>
+import math
+print(math.pi)  # 3.141592653589793
+  </pre>
+    </div>
+
+    <div id="json">
+      <h2>Python JSON</h2>
+      <p>Python provides a json module to handle JSON data. Example:</p>
+      <pre>
+import json
+person = {"name": "Alice", "age": 30}
+json_data = json.dumps(person)
+print(json_data)
+  </pre>
+    </div>
+
+    <div id="regex">
+      <h2>Python RegEx</h2>
+      <p>Python provides the re module for working with regular expressions. Example:</p>
+      <pre>
+import re
+pattern = r"\d+"
+text = "There are 123 apples."
+result = re.findall(pattern, text)
+print(result)  # ['123']
+  </pre>
+    </div>
+
+    <div id="pip">
+      <h2>Python PIP</h2>
+      <p>PIP is the package installer for Python. Example:</p>
+      <pre>
+pip install numpy
+  </pre>
+    </div>
+
+    <div id="tryexcept">
+      <h2>Python Try...Except</h2>
+      <p>Try...Except handles exceptions in Python. Example:</p>
+      <pre>
+try:
+x = 10 / 0
+except ZeroDivisionError:
+print("Cannot divide by zero!")
+  </pre>
+    </div>
+
+    <div id="user-input">
+      <h2>Python User Input</h2>
+      <p>The input function allows user input. Example:</p>
+      <pre>
+name = input("Enter your name: ")
+print(f"Hello, {name}!")
+  </pre>
+    </div>
+
+    <div id="string-formatting">
+      <h2>Python String Formatting</h2>
+      <p>String formatting allows inserting values into strings. Example:</p>
+      <pre>
+name = "Alice"
+greeting = f"Hello, {name}!"
+print(greeting)
+  </pre>
+    </div>
+
+    <div id="file-handling">
+      <h2>File Handling</h2>
+      <p>Python allows reading, writing, and deleting files. Example:</p>
+      <pre>
+# Reading a file
+with open('file.txt', 'r') as file:
+print(file.read())
+
+# Writing to a file
+with open('file.txt', 'w') as file:
+file.write("Hello, Python!")
+
+# Deleting a file
+import os
+os.remove('file.txt')
+  </pre>
+    </div>
+
+    <div id="mysql">
+      <h2>Python MySQL</h2>
+      <p>Python can interact with MySQL databases. Example:</p>
+      <pre>
+import mysql.connector
+conn = mysql.connector.connect(user='root', password='password', host='localhost', database='test')
+cursor = conn.cursor()
+cursor.execute("SELECT * FROM users")
+for row in cursor.fetchall():
+print(row)
+  </pre>
+    </div>
+
+    <div id="mongodb">
+      <h2>Python MongoDB</h2>
+      <p>Python interacts with MongoDB through the pymongo module. Example:</p>
+      <pre>
+import pymongo
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["mydatabase"]
+collection = db["users"]
+collection.insert_one({"name": "Alice", "age": 30})
+  </pre>
+    </div>
+
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content div');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Tutorial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .sidebar {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #33333379;
+        padding-top: 20px;
+        overflow-y: auto;
+    }
+
+    .sidebar a {
+        padding: 12px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+        background-color: #575757;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .content div {
+      display: none;
+    }
+
+    .content div.active {
+      display: block;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    pre {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #home {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h3>PHP Tutorial</h3>
+    <a href="#home" onclick="showSection('home')">PHP HOME</a>
+    <a href="#intro" onclick="showSection('intro')">PHP Intro</a>
+    <a href="#install" onclick="showSection('install')">PHP Install</a>
+    <a href="#syntax" onclick="showSection('syntax')">PHP Syntax</a>
+    <a href="#comments" onclick="showSection('comments')">PHP Comments</a>
+    <a href="#variables" onclick="showSection('variables')">PHP Variables</a>
+    <a href="#echo" onclick="showSection('echo')">PHP Echo / Print</a>
+    <a href="#data-types" onclick="showSection('data-types')">PHP Data Types</a>
+    <a href="#strings" onclick="showSection('strings')">PHP Strings</a>
+    <a href="#numbers" onclick="showSection('numbers')">PHP Numbers</a>
+    <a href="#casting" onclick="showSection('casting')">PHP Casting</a>
+    <a href="#math" onclick="showSection('math')">PHP Math</a>
+    <a href="#constants" onclick="showSection('constants')">PHP Constants</a>
+    <a href="#magic-constants" onclick="showSection('magic-constants')">PHP Magic Constants</a>
+    <a href="#operators" onclick="showSection('operators')">PHP Operators</a>
+    <a href="#ifelse" onclick="showSection('ifelse')">PHP If...Else...Elseif</a>
+    <a href="#switch" onclick="showSection('switch')">PHP Switch</a>
+    <a href="#loops" onclick="showSection('loops')">PHP Loops</a>
+    <a href="#functions" onclick="showSection('functions')">PHP Functions</a>
+    <a href="#arrays" onclick="showSection('arrays')">PHP Arrays</a>
+    <a href="#superglobals" onclick="showSection('superglobals')">PHP Superglobals</a>
+    <a href="#regex" onclick="showSection('regex')">PHP RegEx</a>
+    <a href="#forms" onclick="showSection('forms')">PHP Forms</a>
+    <a href="#form-handling" onclick="showSection('form-handling')">PHP Form Handling</a>
+    <a href="#form-validation" onclick="showSection('form-validation')">PHP Form Validation</a>
+    <a href="#form-required" onclick="showSection('form-required')">PHP Form Required</a>
+    <a href="#form-url" onclick="showSection('form-url')">PHP Form URL/E-mail</a>
+    <a href="#form-complete" onclick="showSection('form-complete')">PHP Form Complete</a>
+    <a href="#date-time" onclick="showSection('date-time')">PHP Date and Time</a>
+    <a href="#include" onclick="showSection('include')">PHP Include</a>
+    <a href="#file-handling" onclick="showSection('file-handling')">PHP File Handling</a>
+    <a href="#file-open-read" onclick="showSection('file-open-read')">PHP File Open/Read</a>
+    <a href="#file-create-write" onclick="showSection('file-create-write')">PHP File Create/Write</a>
+    <a href="#file-upload" onclick="showSection('file-upload')">PHP File Upload</a>
+    <a href="#cookies" onclick="showSection('cookies')">PHP Cookies</a>
+    <a href="#sessions" onclick="showSection('sessions')">PHP Sessions</a>
+    <a href="#filters" onclick="showSection('filters')">PHP Filters</a>
+    <a href="#filters-advanced" onclick="showSection('filters-advanced')">PHP Filters Advanced</a>
+    <a href="#callback-functions" onclick="showSection('callback-functions')">PHP Callback Functions</a>
+    <a href="#json" onclick="showSection('json')">PHP JSON</a>
+    <a href="#exceptions" onclick="showSection('exceptions')">PHP Exceptions</a>
+    <a href="#what-is-oop" onclick="showSection('what-is-oop')">PHP What is OOP</a>
+    <a href="#classes-objects" onclick="showSection('classes-objects')">PHP Classes/Objects</a>
+    <a href="#constructor" onclick="showSection('constructor')">PHP Constructor</a>
+    <a href="#destructor" onclick="showSection('destructor')">PHP Destructor</a>
+    <a href="#access-modifiers" onclick="showSection('access-modifiers')">PHP Access Modifiers</a>
+    <a href="#inheritance" onclick="showSection('inheritance')">PHP Inheritance</a>
+    <a href="#constants" onclick="showSection('constants')">PHP Constants</a>
+    <a href="#abstract-classes" onclick="showSection('abstract-classes')">PHP Abstract Classes</a>
+    <a href="#interfaces" onclick="showSection('interfaces')">PHP Interfaces</a>
+    <a href="#traits" onclick="showSection('traits')">PHP Traits</a>
+    <a href="#static-methods" onclick="showSection('static-methods')">PHP Static Methods</a>
+    <a href="#static-properties" onclick="showSection('static-properties')">PHP Static Properties</a>
+    <a href="#namespaces" onclick="showSection('namespaces')">PHP Namespaces</a>
+    <a href="#iterables" onclick="showSection('iterables')">PHP Iterables</a>
+  </div>
+
+  <div class="content">
+    <div id="home">
+      <h2>PHP HOME</h2>
+      <p>Welcome to the PHP tutorial. PHP is a popular scripting language for creating dynamic web pages.</p>
+    </div>
+
+    <div id="intro">
+      <h2>PHP Intro</h2>
+      <p>PHP stands for "PHP: Hypertext Preprocessor". It is a widely-used, open-source scripting language.</p>
+    </div>
+
+    <div id="install">
+      <h2>PHP Install</h2>
+      <p>To install PHP, download it from the official PHP website and configure it on your server.</p>
+    </div>
+
+    <div id="syntax">
+      <h2>PHP Syntax</h2>
+      <p>PHP scripts are executed on the server, and the output is returned to the browser as plain HTML. Example:</p>
+      <pre>
+&lt;?php
+  echo "Hello, World!";
+?&gt;
+      </pre>
+    </div>
+
+    <div id="comments">
+      <h2>PHP Comments</h2>
+      <p>Comments are used to explain the code. Example:</p>
+      <pre>
+// This is a single-line comment
+# This is also a single-line comment
+/* This is a 
+multi-line comment */
+      </pre>
+    </div>
+
+    <div id="variables">
+      <h2>PHP Variables</h2>
+      <p>Variables are used to store data. Example:</p>
+      <pre>
+&lt;?php
+  $name = "John";
+  $age = 25;
+  echo $name . " is " . $age . " years old.";
+?&gt;
+      </pre>
+    </div>
+
+    <div id="echo">
+      <h2>PHP Echo / Print</h2>
+      <p>Both echo and print are used to output data. Example:</p>
+      <pre>
+&lt;?php
+  echo "Hello, World!";
+  print "Hello, PHP!";
+?&gt;
+      </pre>
+    </div>
+
+    <div id="data-types">
+      <h2>PHP Data Types</h2>
+      <p>PHP supports several data types, including strings, integers, and arrays. Example:</p>
+      <pre>
+&lt;?php
+  $string = "Hello";
+  $int = 42;
+  $array = ["Apple", "Banana", "Cherry"];
+?&gt;
+      </pre>
+    </div>
+
+    <div id="strings">
+      <h2>PHP Strings</h2>
+      <p>Strings are sequences of characters. Example:</p>
+      <pre>
+&lt;?php
+  $greeting = "Hello, " . "World!";
+  echo $greeting;
+?&gt;
+      </pre>
+    </div>
+
+    <div id="numbers">
+      <h2>PHP Numbers</h2>
+      <p>PHP supports integers and floats. Example:</p>
+      <pre>
+&lt;?php
+  $x = 10;
+  $y = 10.5;
+?&gt;
+      </pre>
+    </div>
+
+    <div id="casting">
+      <h2>PHP Casting</h2>
+      <p>Casting allows you to convert variables to different types. Example:</p>
+      <pre>
+&lt;?php
+  $x = 10.5;
+  $int_cast = (int)$x;
+  echo $int_cast;
+?&gt;
+      </pre>
+    </div>
+
+    <div id="math">
+      <h2>PHP Math</h2>
+      <p>PHP provides functions for mathematical operations. Example:</p>
+      <pre>
+&lt;?php
+  echo sqrt(16); // 4
+?&gt;
+      </pre>
+    </div>
+
+    <div id="constants">
+      <h2>PHP Constants</h2>
+      <p>Constants are defined using the define() function. Example:</p>
+      <pre>
+&lt;?php
+  define("SITE_NAME", "My Website");
+  echo SITE_NAME;
+?&gt;
+      </pre>
+    </div>
+
+    <div id="magic-constants">
+      <h2>PHP Magic Constants</h2>
+      <p>PHP provides predefined constants that change depending on their context. Example:</p>
+      <pre>
+&lt;?php
+  echo __FILE__;
+?&gt;
+      </pre>
+    </div>
+
+    <div id="operators">
+      <h2>PHP Operators</h2>
+      <p>PHP supports various operators, such as arithmetic and logical operators. Example:</p>
+      <pre>
+&lt;?php
+  $x = 5;
+  $y = 10;
+  echo $x + $y;
+?&gt;
+      </pre>
+    </div>
+
+    <div id="ifelse">
+      <h2>PHP If...Else...Elseif</h2>
+      <p>Conditional statements allow decision-making. Example:</p>
+      <pre>
+&lt;?php
+  $age = 20;
+  if ($age >= 18) {
+      echo "Adult";
+  } else {
+      echo "Minor";
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="switch">
+      <h2>PHP Switch</h2>
+      <p>The switch statement is used for multiple conditions. Example:</p>
+      <pre>
+&lt;?php
+  $color = "red";
+  switch ($color) {
+      case "red":
+          echo "Stop!";
+          break;
+      case "green":
+          echo "Go!";
+          break;
+      default:
+          echo "Wait!";
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="loops">
+      <h2>PHP Loops</h2>
+      <p>Loops execute a block of code repeatedly. Example:</p>
+      <pre>
+&lt;?php
+  for ($i = 0; $i < 5; $i++) {
+      echo $i;
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="functions">
+      <h2>PHP Functions</h2>
+      <p>Functions encapsulate code to perform specific tasks. Example:</p>
+      <pre>
+&lt;?php
+  function sayHello() {
+      echo "Hello, World!";
+  }
+  sayHello();
+?&gt;
+      </pre>
+    </div>
+
+    <div id="arrays">
+      <h2>PHP Arrays</h2>
+      <p>Arrays store multiple values. Example:</p>
+      <pre>
+&lt;?php
+  $fruits = ["Apple", "Banana", "Cherry"];
+  foreach ($fruits as $fruit) {
+      echo $fruit . " ";
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="superglobals">
+      <h2>PHP Superglobals</h2>
+      <p>Superglobals are predefined variables in PHP. Example:</p>
+      <pre>
+&lt;?php
+  echo $_SERVER['PHP_SELF'];
+?&gt;
+      </pre>
+    </div>
+
+    <div id="regex">
+      <h2>PHP RegEx</h2>
+      <p>Regular expressions are used for pattern matching. Example:</p>
+      <pre>
+&lt;?php
+  if (preg_match("/world/", "Hello world!")) {
+      echo "Match found.";
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="forms">
+      <h2>PHP Forms</h2>
+      <p>PHP is used to handle form data. Example:</p>
+      <pre>
+&lt;form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"&gt;
+  Name: &lt;input type="text" name="fname"&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+      </pre>
+    </div>
+
+    <div id="form-handling">
+      <h2>PHP Form Handling</h2>
+      <p>Handle form submissions securely. Example:</p>
+      <pre>
+&lt;?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $name = htmlspecialchars($_POST['fname']);
+      echo $name;
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="form-validation">
+      <h2>PHP Form Validation</h2>
+      <p>Validate form input for better security. Example:</p>
+      <pre>
+&lt;?php
+  if (empty($_POST['fname'])) {
+      echo "Name is required.";
+  }
+?&gt;
+      </pre>
+    </div>
+
+    <div id="form-required">
+      <h2>PHP Form Required</h2>
+      <p>Mark form fields as required. Example:</p>
+      <pre>
+&lt;form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"&gt;
+  Name: &lt;input type="text" name="fname" required&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+      </pre>
+    </div>
+
+    <div id="form-url">
+      <h2>PHP Form URL/E-mail</h2>
+      <p>Validate URLs and email addresses. Example:</p>
+      <pre>
+&lt;?php
+  $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+  $url = filter_var($url, FILTER_VALIDATE_URL);
+?&gt;
+      </pre>
+    </div>
+
+    <div id="form-complete">
+      <h2>PHP Form Complete</h2>
+      <p>A complete form example:</p>
+      <pre>
+&lt;?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $name = htmlspecialchars($_POST['fname']);
+      echo "Thank you, " . $name;
+  }
+?&gt;
+&lt;form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"&gt;
+  Name: &lt;input type="text" name="fname" required&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+      </pre>
+    </div>
+
+    <div id="date-time">
+        <h2>PHP Date and Time</h2>
+        <p>PHP provides functions to work with dates and times. Example:</p>
+        <pre>
+  &lt;?php
+    echo date("Y-m-d H:i:s");
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="include">
+        <h2>PHP Include</h2>
+        <p>Use include to insert the content of one PHP file into another. Example:</p>
+        <pre>
+  &lt;?php
+    include 'header.php';
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="file-handling">
+        <h2>PHP File Handling</h2>
+        <p>Handle files using functions like fopen, fread, and fwrite. Example:</p>
+        <pre>
+  &lt;?php
+    $file = fopen("example.txt", "r");
+    echo fread($file, filesize("example.txt"));
+    fclose($file);
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="file-open-read">
+        <h2>PHP File Open/Read</h2>
+        <p>Open and read files with fopen and fread. Example:</p>
+        <pre>
+  &lt;?php
+    $file = fopen("example.txt", "r");
+    while (!feof($file)) {
+        echo fgets($file);
+    }
+    fclose($file);
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="file-create-write">
+        <h2>PHP File Create/Write</h2>
+        <p>Create and write to files using fopen and fwrite. Example:</p>
+        <pre>
+  &lt;?php
+    $file = fopen("newfile.txt", "w");
+    fwrite($file, "Hello, World!");
+    fclose($file);
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="file-upload">
+        <h2>PHP File Upload</h2>
+        <p>Upload files to the server. Example:</p>
+        <pre>
+  &lt;form action="upload.php" method="post" enctype="multipart/form-data"&gt;
+    Select file: &lt;input type="file" name="fileToUpload"&gt;
+    &lt;input type="submit" value="Upload File"&gt;
+  &lt;/form&gt;
+        </pre>
+      </div>
+  
+      <div id="cookies">
+        <h2>PHP Cookies</h2>
+        <p>Set and retrieve cookies. Example:</p>
+        <pre>
+  &lt;?php
+    setcookie("user", "John", time() + (86400 * 30), "/");
+    echo $_COOKIE["user"];
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="sessions">
+        <h2>PHP Sessions</h2>
+        <p>Start a session to store user information. Example:</p>
+        <pre>
+  &lt;?php
+    session_start();
+    $_SESSION["user"] = "John";
+    echo $_SESSION["user"];
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="filters">
+        <h2>PHP Filters</h2>
+        <p>Validate and sanitize input. Example:</p>
+        <pre>
+  &lt;?php
+    $email = filter_var("test@example.com", FILTER_VALIDATE_EMAIL);
+    echo $email;
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="filters-advanced">
+        <h2>PHP Filters Advanced</h2>
+        <p>Use advanced filters for custom validation. Example:</p>
+        <pre>
+  &lt;?php
+    $options = ["options" => ["min_range" => 1, "max_range" => 100]];
+    echo filter_var(50, FILTER_VALIDATE_INT, $options);
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="callback-functions">
+        <h2>PHP Callback Functions</h2>
+        <p>Use callback functions in PHP. Example:</p>
+        <pre>
+  &lt;?php
+    function my_callback($item) {
+        return strtoupper($item);
+    }
+    $arr = ["apple", "banana", "cherry"];
+    print_r(array_map("my_callback", $arr));
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="json">
+        <h2>PHP JSON</h2>
+        <p>Work with JSON data in PHP. Example:</p>
+        <pre>
+  &lt;?php
+    $arr = ["name" => "John", "age" => 30];
+    echo json_encode($arr);
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="exceptions">
+        <h2>PHP Exceptions</h2>
+        <p>Handle exceptions in PHP. Example:</p>
+        <pre>
+  &lt;?php
+    try {
+        throw new Exception("An error occurred.");
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+  ?&gt;
+        </pre>
+      </div>
+
+      <div id="what-is-oop">
+        <h2>PHP What is OOP</h2>
+        <p>Object-Oriented Programming (OOP) is a programming style that uses objects and classes.</p>
+      </div>
+  
+      <div id="classes-objects">
+        <h2>PHP Classes/Objects</h2>
+        <p>Classes are blueprints for objects, and objects are instances of classes.</p>
+        <pre>
+  &lt;?php
+    class Car {
+        public $color;
+        public $model;
+        public function __construct($color, $model) {
+            $this->color = $color;
+            $this->model = $model;
+        }
+    }
+  ?&gt;
+        </pre>
+      </div>
+  
+      <div id="constructor">
+        <h2>PHP Constructor</h2>
+        <p>Constructors are special methods that are automatically called when an object is created.</p>
+      </div>
+  
+      <div id="destructor">
+        <h2>PHP Destructor</h2>
+        <p>Destructors are special methods that are automatically called when an object is destroyed.</p>
+      </div>
+  
+      <div id="access-modifiers">
+        <h2>PHP Access Modifiers</h2>
+        <p>Access modifiers define the visibility of class properties and methods.</p>
+      </div>
+  
+      <div id="inheritance">
+        <h2>PHP Inheritance</h2>
+        <p>Inheritance allows a class to use properties and methods of another class.</p>
+      </div>
+  
+      <div id="constants">
+        <h2>PHP Constants</h2>
+        <p>Constants are like variables but cannot be changed after they are set.</p>
+      </div>
+  
+      <div id="abstract-classes">
+        <h2>PHP Abstract Classes</h2>
+        <p>Abstract classes cannot be instantiated and are meant to be extended by other classes.</p>
+      </div>
+  
+      <div id="interfaces">
+        <h2>PHP Interfaces</h2>
+        <p>Interfaces define methods that must be implemented by a class.</p>
+      </div>
+  
+      <div id="traits">
+        <h2>PHP Traits</h2>
+        <p>Traits are used to include reusable methods in multiple classes.</p>
+      </div>
+  
+      <div id="static-methods">
+        <h2>PHP Static Methods</h2>
+        <p>Static methods can be called without creating an instance of a class.</p>
+      </div>
+  
+      <div id="static-properties">
+        <h2>PHP Static Properties</h2>
+        <p>Static properties are shared by all instances of a class.</p>
+      </div>
+  
+      <div id="namespaces">
+        <h2>PHP Namespaces</h2>
+        <p>Namespaces are used to organize code and avoid name conflicts.</p>
+      </div>
+  
+      <div id="iterables">
+        <h2>PHP Iterables</h2>
+        <p>Iterables are data structures that can be looped through with a foreach loop.</p>
+      </div>
+  
+
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content div');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
